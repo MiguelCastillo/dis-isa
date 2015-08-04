@@ -151,22 +151,22 @@ define(["dist/index"], function(types) {
         });
       });
 
+      describe("instance", function() {
+        it("is true", function() {
+          function test(){}
+          expect(types.isObject(new test())).to.equal(true);
+        });
+      });
+
       describe("true", function() {
         it("is true", function() {
-          expect(types.isObject(true));
+          expect(types.isObject(true)).to.equal(false);
         });
       });
 
       describe("false", function() {
         it("is false", function() {
-          expect(types.isObject(true));
-        });
-      });
-
-      describe("instance", function() {
-        it("is true", function() {
-          function test(){}
-          expect(types.isObject(new test())).to.equal(true);
+          expect(types.isObject(true)).to.equal(false);
         });
       });
 
