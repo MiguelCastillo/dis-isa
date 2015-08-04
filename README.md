@@ -92,7 +92,7 @@ types.isDate(new Date()); // true
 
 #### isObject(any) : boolean
 
-Method that takes an input and returns whether or not it is an object. And object is any one of the follow:
+Method that takes an input and returns whether or not it is an object. And object is any one of the following:
 - literal object
 - object instance
 - array
@@ -110,7 +110,7 @@ types.isObject(null); // yest
 #### isPlainObject(any) : boolean
 
 Method that takes an input and returns whether or not it is a plain object. A plain object can be:
-- A literal object.  {}
+- A literal object. `{}`
 - Objects created with `new Object()` and `Object.create`
 
 ``` javascript
