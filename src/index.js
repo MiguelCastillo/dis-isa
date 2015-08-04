@@ -81,7 +81,7 @@ function isString(item) {
 
 /**
  * Check if input is an object. Objects are:
- *  - literal object, objects, arrays, true, false, null, and instances
+ *  - literal object, object instances, arrays, null
  *
  * @param {*} item - Item to check for object
  * @returns {boolean}
