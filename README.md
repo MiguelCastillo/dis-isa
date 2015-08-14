@@ -138,7 +138,7 @@ types.isError(err); // true
 
 #### typeName(any) : string
 
-Method that takes an input and returns its string type representation. The string type is all lower case. Useful for extending the supported type.
+Method that takes an input and returns its string type representation. The string type is all lower case. Useful for extending the supported types.
 
 ``` javascript
 import types from 'dis-isa';
@@ -150,14 +150,14 @@ types.typeName(function() {}); // 'function'
 
 #### toString(any) : string
 
-Method that takes an input and returns the raw type signature. Useful for extending the supported type.
+Method that takes an input and returns the raw type signature. Useful for extending the supported types.
 
 ``` javascript
 import types from 'dis-isa';
 
-types.typeName(1); // '[object Number]'
-types.typeName(null); // '[object Null]'
-types.typeName(function() {}); // '[object Function]'
+types.toString(1); // '[object Number]'
+types.toString(null); // '[object Null]'
+types.toString(function() {}); // '[object Function]'
 ```
 
 
