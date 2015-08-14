@@ -104,7 +104,7 @@ import types from 'dis-isa';
 types.isObject(1); // false
 types.isObject("test"); // true
 types.isObject(new String("test")); // true
-types.isObject(null); // yest
+types.isObject(null); // true
 ```
 
 #### isPlainObject(any) : boolean
