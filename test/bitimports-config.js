@@ -11,8 +11,6 @@ var System = (function() {
   // Add modules to exclude from pipeline processing
   importer.ignore(["chai"]);
 
-  bitimports.Logger.enableAll();
+  bitimports.logger.enable();
   return importer;
 })();
-
-var require = System.require;
