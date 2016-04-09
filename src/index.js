@@ -1,6 +1,6 @@
 var toString = Function.prototype.apply.bind(Object.prototype.toString);
 
-var bufferSignature = typeof Buffer !== 'undefined' ? toString(Buffer) : "[object Uint8Array]";
+var bufferSignature = typeof Buffer !== "undefined" ? toString(Buffer) : "[object Uint8Array]";
 var regexSignature  = toString(/test/);
 var dateSignature   = toString(new Date());
 var arraySignature  = toString([]);
@@ -68,7 +68,7 @@ var isArray = (function() {
  * @returns {boolean}
  */
 function isFunction(item) {
-  return typeof item === 'function';
+  return typeof item === "function";
 }
 
 /**
@@ -78,7 +78,7 @@ function isFunction(item) {
  * @returns {boolean}
  */
 function isString(item) {
-  return typeof item === 'string';
+  return typeof item === "string";
 }
 
 /**
@@ -89,7 +89,7 @@ function isString(item) {
  * @returns {boolean}
  */
 function isObject(item) {
-  return typeof item === 'object';
+  return typeof item === "object";
 }
 
 /**
@@ -131,10 +131,10 @@ function isError(item) {
  */
 function typeName(item) {
   if (isNull(item)) {
-    return 'null';
+    return "null";
   }
   else if (isUndefined(item)) {
-    return 'undefined';
+    return "undefined";
   }
 
   return /\[.+ ([^\]]+)/.exec(toString(item))[1].toLowerCase();
@@ -145,6 +145,7 @@ module.exports = {
   isUndefined: isUndefined,
   isRegex: isRegex,
   isArray: isArray,
+  isBuffer: isBuffer,
   isError: isError,
   isString: isString,
   isObject: isObject,
