@@ -1,11 +1,19 @@
 var toString = Function.prototype.apply.bind(Object.prototype.toString);
 
+var bufferSignature = typeof Buffer !== 'undefined' ? toString(Buffer) : "[object Uint8Array]";
 var regexSignature  = toString(/test/);
 var dateSignature   = toString(new Date());
 var arraySignature  = toString([]);
 var objectSignature = toString({});
 var errorSignature  = toString(new Error());
 
+
+/**
+ * Checks is the input is a Buffer
+ */
+function isBuffer(item) {
+  return toString(item) === bufferSignature;
+}
 
 /**
  * Check if input is undefined
