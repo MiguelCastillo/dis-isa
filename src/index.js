@@ -1,10 +1,4 @@
-// Helper method to test for object types.
-var toString = (function() {
-  var _toString = Object.prototype.toString;
-  return function toStringDelegate(item) {
-    return _toString.call(item);
-  };
-})();
+var toString = Function.prototype.apply.bind(Object.prototype.toString);
 
 var regexSignature  = toString(/test/);
 var dateSignature   = toString(new Date());
