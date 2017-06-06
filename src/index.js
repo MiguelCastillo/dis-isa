@@ -1,15 +1,23 @@
 var toString = Function.prototype.apply.bind(Object.prototype.toString);
 
-var bufferSignature = typeof Buffer !== "undefined" ? toString(Buffer) : "[object Uint8Array]";
-var regexSignature  = toString(/test/);
-var dateSignature   = toString(new Date());
-var arraySignature  = toString([]);
-var objectSignature = toString({});
-var errorSignature  = toString(new Error());
+var bufferSignature  = typeof Buffer !== "undefined" ? toString(Buffer) : "[object Uint8Array]";
+var booleanSignature = toString(true);
+var regexSignature   = toString(/test/);
+var dateSignature    = toString(new Date());
+var arraySignature   = toString([]);
+var objectSignature  = toString({});
+var errorSignature   = toString(new Error());
 
 
 /**
- * Checks is the input is a Buffer
+ * Checks if the input is a boolean
+ */
+function isBoolean(item) {
+  return toString(item) === booleanSignature;
+}
+
+/**
+ * Checks if the input is a Buffer
  */
 function isBuffer(item) {
   return toString(item) === bufferSignature;
@@ -141,6 +149,7 @@ function typeName(item) {
 }
 
 module.exports = {
+  isBoolean: isBoolean,
   isNull: isNull,
   isUndefined: isUndefined,
   isRegex: isRegex,

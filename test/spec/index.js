@@ -125,6 +125,37 @@ describe("types Suite", function() {
     });
   });
 
+  describe("when isBoolean", function() {
+    describe("true", function() {
+      it("is boolean", function() {
+        expect(types.isBoolean(true)).to.equal(true);
+      });
+    });
+
+    describe("false", function() {
+      it("is boolean", function() {
+        expect(types.isBoolean(true)).to.equal(true);
+      });
+    });
+
+    describe("null", function() {
+      it("is not boolean", function() {
+        expect(types.isBoolean(null)).to.equal(false);
+      });
+    });
+
+    describe("undefined", function() {
+      it("is not boolean", function() {
+        expect(types.isBoolean(undefined)).to.equal(false);
+      });
+    });
+
+    describe("object", function() {
+      it("is not boolean", function() {
+        expect(types.isBoolean({})).to.equal(false);
+      });
+    });
+  });
 
   describe("when isObject", function() {
     describe("empty object", function() {
