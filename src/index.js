@@ -7,6 +7,7 @@ var dateSignature    = toString(new Date());
 var arraySignature   = toString([]);
 var objectSignature  = toString({});
 var errorSignature   = toString(new Error());
+var numberSignature  = toString(1);
 
 
 /**
@@ -14,6 +15,13 @@ var errorSignature   = toString(new Error());
  */
 function isBoolean(item) {
   return toString(item) === booleanSignature;
+}
+
+/**
+ * Checks is the input is a number
+ */
+function isNumber(item) {
+  return toString(item) === numberSignature;
 }
 
 /**
@@ -161,6 +169,7 @@ module.exports = {
   isPlainObject: isPlainObject,
   isFunction: isFunction,
   isDate: isDate,
+  isNumber: isNumber,
   typeName: typeName,
   toString: toString
 };
