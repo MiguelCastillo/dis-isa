@@ -157,6 +157,44 @@ describe("types Suite", function() {
     });
   });
 
+  describe("When isNumber", function() {
+    describe("1", function() {
+      it("is a number", function() {
+        expect(types.isNumber(1)).to.equal(true);
+      });
+    });
+
+    describe("-1", function() {
+      it("is a number", function() {
+        expect(types.isNumber(-1)).to.equal(true);
+      });
+    });
+
+    describe("3.14", function() {
+      it("is a number", function() {
+        expect(types.isNumber(3.14)).to.equal(true);
+      });
+    });
+
+    describe("null", function() {
+      it("is not a number", function() {
+        expect(types.isNumber(null)).to.equal(false);
+      });
+    });
+
+    describe("undefined", function() {
+      it("is not a number", function() {
+        expect(types.isNumber(undefined)).to.equal(false);
+      });
+    });
+
+    describe("string number", function() {
+      it("is not a number", function() {
+        expect(types.isNumber("1")).to.equal(false);
+      });
+    });
+  });
+
   describe("when isObject", function() {
     describe("empty object", function() {
       it("is true", function() {
