@@ -4,6 +4,20 @@
 
 ### API
 
+
+#### isBoolean(any) : boolean
+
+Method that takes in a value and returns whether or not it is boolean.
+
+``` javascript
+import types from 'dis-isa';
+
+types.isBoolean(true); // true
+types.isBoolean(false); // true
+types.isBoolean(1); // false
+types.isBoolean(undefined); // false
+```
+
 #### isUndefined(any) : boolean
 
 Method that takes an input and returns whether or not it is `undefined`.
