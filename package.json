@@ -1,7 +1,9 @@
 {
   "name": "dis-isa",
   "version": "1.2.3",
-  "dependencies": {},
+  "dependencies": {
+    
+  },
   "main": "src/index.js",
   "scripts": {
     "prepublish": "grunt build",
@@ -9,7 +11,7 @@
   },
   "devDependencies": {
     "bit-imports": "^2.0.1",
-    "browserify": "~13.0.0",
+    "browserify": "~14.4.0",
     "chai": "~3.5.0",
     "config-grunt-tasks": "^1.0.2",
     "grunt": "~1.0.1",
@@ -23,11 +25,13 @@
     "grunt-release": "^0.13.0",
     "jshint-stylish": "~2.1.0",
     "load-grunt-tasks": "^3.5.0",
-    "mocha": "~2.4.5",
+    "mocha": "~3.4.2",
     "sinon": "~1.17.3",
     "spromise": "^1.0.0"
   },
-  "browser": {},
+  "browser": {
+    
+  },
   "directories": {
     "test": "test"
   },
