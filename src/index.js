@@ -1,6 +1,6 @@
 var toString = Function.prototype.apply.bind(Object.prototype.toString);
 
-var bufferSignature  = typeof Buffer !== "undefined" ? toString(Buffer) : "[object Uint8Array]";
+var bufferSignature  = typeof Buffer !== "undefined" ? toString(new Buffer(1)) : "[object Uint8Array]";
 var booleanSignature = toString(true);
 var regexSignature   = toString(/test/);
 var dateSignature    = toString(new Date());
