@@ -1,4 +1,5 @@
-var types = require("dist/index");
+var expect = require('chai').expect;
+var types = require("../src/index");
 
 describe("types Suite", function() {
   describe("Getting object type name", function() {
@@ -76,6 +77,12 @@ describe("types Suite", function() {
       });
     });
 
+    describe("instance of object", function() {
+      it("is true", function() {
+        expect(types.isPlainObject({})).to.equal(true);
+      });
+    });
+
     describe("object with no prototype", function() {
       it("is true", function() {
         expect(types.isPlainObject(Object.create(null))).to.equal(true);
@@ -84,7 +91,7 @@ describe("types Suite", function() {
 
     describe("object with prototype", function() {
       it("is true", function() {
-        expect(types.isPlainObject(Object.create({}))).to.equal(true);
+        expect(types.isPlainObject(Object.create({}))).to.equal(false);
       });
     });
 
@@ -121,6 +128,15 @@ describe("types Suite", function() {
     describe("anonymous function", function() {
       it("is false", function() {
         expect(types.isPlainObject(function(){})).to.equal(false);
+      });
+    });
+
+    describe("instance of Foo", function() {
+      function Foo() {
+      }
+
+      it("is false", function() {
+        expect(types.isPlainObject(new Foo)).to.equal(false);
       });
     });
   });

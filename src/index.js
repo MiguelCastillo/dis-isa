@@ -1,13 +1,13 @@
-var toString = Function.prototype.apply.bind(Object.prototype.toString);
+const toString = Function.prototype.apply.bind(Object.prototype.toString);
 
-var bufferSignature  = typeof Buffer !== "undefined" ? toString(new Buffer(1)) : "[object Uint8Array]";
-var booleanSignature = toString(true);
-var regexSignature   = toString(/test/);
-var dateSignature    = toString(new Date());
-var arraySignature   = toString([]);
-var objectSignature  = toString({});
-var errorSignature   = toString(new Error());
-var numberSignature  = toString(1);
+const bufferSignature  = typeof Buffer !== "undefined" ? toString(new Buffer(1)) : "[object Uint8Array]";
+const booleanSignature = toString(true);
+const regexSignature   = toString(/test/);
+const dateSignature    = toString(new Date());
+const arraySignature   = toString([]);
+const objectSignature  = toString({});
+const errorSignature   = toString(new Error());
+const numberSignature  = toString(1);
 
 
 /**
@@ -67,7 +67,7 @@ function isRegex(item) {
  * @param {*} item - Item to be tested for Array
  * @returns {boolean}
  */
-var isArray = (function() {
+const isArray = (function() {
   if (Array.isArray) {
     return Array.isArray;
   }
@@ -120,12 +120,24 @@ function isDate(item) {
 
 /**
  * Check if item is an object literal - plain object.
+ * A plain object is an object without prototype, or a prototype equals to
+ * Object.prototype. For example, a literal object such as `{"yes": "value"}`.
+ * Or instances of `Object` like `new Object()`. Alternative, an object with
+ * no prototype.
  *
  * @param {*} item - Item to check for object literal
  * @returns {boolean}
  */
 function isPlainObject(item) {
-  return toString(item) === objectSignature;
+  return toString(item) === objectSignature && _checkPlainObjectPrototype(item);
+}
+
+// Helper to verify that an object is indeed of type object.
+// Ensure the object is either a literal object or an object instance created
+// with `new Object()`. Or an object with no prototype.
+function _checkPlainObjectPrototype(item) {
+	const prototype = Object.getPrototypeOf(item);
+	return prototype === null || prototype === Object.prototype;
 }
 
 /**
