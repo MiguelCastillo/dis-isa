@@ -1,6 +1,6 @@
 {
   "name": "dis-isa",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "dependencies": {},
   "main": "src/index.js",
   "scripts": {
