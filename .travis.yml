@@ -1,3 +1,15 @@
 language: node_js
 node_js:
-  - "10"
+- '10'
+deploy:
+  provider: npm
+  email: manchagnu@gmail.com
+  api_key:
+    secure: YmfB6SrAn0O47QDNNLjij/KZ7JvqK41EwYXvaLV0aYYgz236cHvM4W2EkuLiMgzibPtPxZG6C1QX4t7l/RR1ifRNneTSsbACv6fjWY2q2mJBr/6pbUKWWHWZ5iYU6FAe2nH9yHkHipCDBMcFwkTWiSGnzeZ6u/xqucXvjLMdmePNdLeG471ypZJa2T4MofWj5iwxkEILt5WWX/bL5KWmQH9IB7QoTfT+7MTOKCUMIyStfYLDKzTVJJo5WEeSxTFPIEGpmP/AvF7pA++MlgH1ZzidwsEoRxa+QAacHhPtjjSD75lzmNdnQhNOSlMjkUob0xLUJkC/hMv9AJ65hH0K2ToGlfnDkLBRH73ew8hxiMZIj/mdHJ/BJoTnepku41YJRpqgcbLnnaEJQX3wf7iIFpTOKP7T/7wcFWZ1Gssok59SdMMUXgn2t+3JP7eBlJO7C+nE8RXLdI4pXXFY+C5ApSALBNGCWDIIKRUsI2L582rLpZWEd/t4ECJoG4BeZHh0Eze4xnRkTslxLiERJpi4wxOdtQsUhgtjgQHIzjv3HONnQ92jRJrbKcht7VkIWZoGK9JbuDF5Olal+u1/7i1mAhmy/cvjRcWEMGhshMprBrFLF0EmhOX61znwxkaLlm+NtNeYAT6Qdx4JhM17k/rKuiSRApPZA7USHjcq4ZOqIbo=
+  on:
+    tags: true
+    repo: MiguelCastillo/dis-isa
+  skip_cleanup: 'true'
+script:
+  - npm test
+  - npm run build
